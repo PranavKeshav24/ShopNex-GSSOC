@@ -27,7 +27,11 @@ const Navbar = () => {
       setIcon(cart_icon_dark);
       const dnav = document.getElementById("nav");
       dnav.classList.add("dark");
-      navMenu.style.backgroundColor = "#171717";
+      if (window.innerWidth <= 768) {
+        navMenu.style.backgroundColor = "#171717";
+      } else if (window.innerWidth > 768) {
+        navMenu.style.backgroundColor = "transparent";
+      }
     } else {
       setTheme("dark");
       setIcon(cart_icon);
